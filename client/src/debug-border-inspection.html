@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Border Inspection Debug</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .debug-info { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .highlight { background: yellow; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Credit Accounts Border Debug</h1>
+    <div class="debug-info">
+        <h3>Debug Steps:</h3>
+        <ol>
+            <li>Open main application</li>
+            <li>Expand Credit Accounts section</li>
+            <li>Right-click on the expanded card container</li>
+            <li>Select "Inspect Element"</li>
+            <li>Look for the outermost card wrapper</li>
+            <li class="highlight">Check if "border border-gray-200" is present</li>
+        </ol>
+    </div>
+    
+    <div class="debug-info">
+        <h3>Expected CSS Classes:</h3>
+        <p><strong>When Expanded:</strong> border border-gray-200 shadow-sm bg-white rounded-lg</p>
+        <p><strong>When Collapsed (no warnings):</strong> border border-gray-200 bg-white hover:shadow-lg cursor-pointer</p>
+        <p><strong>When Collapsed (with warnings):</strong> border-2 border-red-500 bg-red-50 hover:shadow-lg cursor-pointer</p>
+    </div>
+    
+    <script>
+        // Open main application
+        setTimeout(() => {
+            window.open('/', '_blank');
+        }, 1000);
+    </script>
+</body>
+</html>
